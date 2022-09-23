@@ -8,6 +8,10 @@ class ApiError {
     this.error = error;
   }
 
+  static UNAUTHORIZED(error: any) {
+    return new ApiError(401, error);
+  }
+
   static BAD_REQUEST(error: any) {
     return new ApiError(400, error);
   }
