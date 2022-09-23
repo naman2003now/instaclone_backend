@@ -11,11 +11,13 @@ module.exports = {
     "plugin:prettier/recommended",
   ],
   overrides: [],
+  ignorePatterns: ["*.js"],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
+    project: "./tsconfig.json",
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ["@typescript-eslint", "prettier"],
   settings: {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts"],
@@ -37,5 +39,6 @@ module.exports = {
         ],
       },
     ],
+    "react/jsx-filename-extension": [0],
   },
 };
