@@ -1,15 +1,17 @@
-import request from "supertest";
+import supertest from "supertest";
 import App from "../app";
 
+const app = new App([]);
+const request = supertest(app.app);
+
 describe("App", () => {
-  const app = new App([]);
   it("should be created", () => {
     expect(app).toBeInstanceOf(App);
   });
+});
 
-  describe("GET /", () => {
-    it("responds with a status 200", () => {
-      request(app.app).get("/").expect(200);
-    });
+describe("GET /", () => {
+  it("responds with a status 200", () => {
+    request.get("/").expect(200);
   });
 });
