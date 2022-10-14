@@ -1,7 +1,5 @@
-import dotenv from "dotenv-safe";
 import App from "./app";
+import User from "./controllers/user";
 
-dotenv.config();
-
-const app = new App([]);
+const app = new App([new User()]);
 app.listen();

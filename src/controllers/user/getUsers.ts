@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import Route, { METHODS } from "../../interfaces/route.interface";
 
-export default class GetUsers extends Route {
+export default class GetUsersRoute extends Route {
   path = "/";
 
   method = METHODS.GET;

@@ -12,6 +12,11 @@ const UserSchema = new mongoose.Schema({
   },
   bio: {
     type: mongoose.SchemaTypes.String,
+    required: true,
+  },
+  profileImage: {
+    type: mongoose.SchemaTypes.String,
+    require: false,
   },
   posts: {
     type: [
@@ -20,6 +25,7 @@ const UserSchema = new mongoose.Schema({
         ref: "Post",
       },
     ],
+    required: false,
   },
 });
 
