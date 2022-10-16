@@ -20,16 +20,17 @@ afterAll(async () => {
   await UserModel.deleteMany({});
 });
 
-describe("GET /user", () => {
-  it("Should respond with status 200", async () => {
-    const response = await request.get("/user");
-    expect(response.status).toBe(200);
-  });
-});
-
 describe("POST /user/create", () => {
   it("Should create user", async () => {
     const response = await request.post("/user/create").send(getFakeUser());
     expect(response.status).toBe(201);
+  });
+});
+
+describe("GET /user", () => {
+  it("Should have one user created", async () => {
+    const response = await request.get("/user");
+    expect(response.status).toBe(200);
+    expect(response.body.length).toBe(1);
   });
 });
